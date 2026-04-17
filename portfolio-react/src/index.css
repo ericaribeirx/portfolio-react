@@ -1,0 +1,219 @@
+:root {
+    --primary-color: #2d4bb9;
+    --dark-color: #0f172a;   
+    --light-bg: #bf8a7f7d;     
+    --white: #ffffff;
+    --text-color: #ffffff;
+
+    --gradient-bg: radial-gradient(circle at 20% 20%, #fbc2eb 0%, transparent 40%),
+                   radial-gradient(circle at 80% 80%, #a6c1ee 0%, transparent 40%),
+                   #0f172a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background: var(--gradient-bg);
+    color: var(--text-color);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+h1, h2 {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    text-align: center; 
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.cursor {
+    display: inline-block;
+    margin-left: 5px;
+    animation: piscar 0.7s infinite;
+}
+
+@keyframes piscar {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+
+header {
+    background-color: var(--white);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+nav ul {
+    display: flex;       
+    list-style: none;    
+    gap: 20px;           
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+section {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+#sobre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    text-align: left;
+}
+
+#sobre img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.sobre-texto {
+    max-width: 500px;
+    line-height: 1.8;
+}
+
+.projetos-container {
+    display: flex;            
+    flex-wrap: wrap;          
+    justify-content: center;  
+    gap: 25px;                
+    margin-top: 30px;
+}
+
+.card-projeto {
+    background: var(--white);
+    color: var(--dark-color); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);    
+    flex: 1 1 300px;    
+    max-width: 400px;
+    transition: transform 0.3s ease;
+}
+
+.card-projeto:hover {
+    transform: scale(1.05);
+}
+
+#projetos h2 {
+    margin-bottom: 30px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    color: var(--text-color);
+}
+
+form {
+    background-color: var(--white);
+    color: var(--dark-color);
+    padding: 40px;
+    border-radius: 16px;      
+    max-width: 550px;
+    margin: 40px auto;        
+    display: flex;            
+    flex-direction: column;   
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+}
+
+#contato h2 {
+    margin-bottom: 30px;
+    color: var(--white);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;       
+}
+
+form label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+form input, form textarea {
+    padding: 14px;
+    border: 2px solid #edf2f7;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #f8fafc;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+form button:hover {
+    background-color: #1d4ed8;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--dark-color);
+    color: white;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; 
+        padding: 1rem;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        gap: 15px;
+    }
+
+    .card-projeto {
+        flex-basis: 100%; 
+    }
+
+    #sobre {
+        flex-direction: column;
+        text-align: center;
+    }
+}
